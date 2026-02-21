@@ -120,7 +120,7 @@ export default function Dashboard() {
                 value={newTodoTitle}
                 onChange={(e) => setNewTodoTitle(e.target.value)}
                 placeholder="What needs to be done?"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-800 placeholder-gray-400"
                 required
               />
             </div>
@@ -130,7 +130,7 @@ export default function Dashboard() {
                 onChange={(e) => setNewTodoDescription(e.target.value)}
                 placeholder="Add a description (optional)"
                 rows={2}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-800 placeholder-gray-400"
               />
             </div>
             <button

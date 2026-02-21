@@ -4,9 +4,9 @@ echo "Starting Todo Application..."
 echo "============================"
 
 # Start backend
-echo "Starting backend server on http://localhost:8002..."
+echo "Starting backend server on http://localhost:8001..."
 cd backend
-python main.py > /tmp/backend.log 2>&1 &
+python main.py > /tmp/backend.log 2>&1 
 BACKEND_PID=$!
 cd ..
 
@@ -24,7 +24,7 @@ fi
 # Start frontend
 echo "Starting frontend server on http://localhost:3000..."
 cd frontend
-npm run dev > /tmp/frontend.log 2>&1 &
+npm run dev > /tmp/frontend.log 2>&1 
 FRONTEND_PID=$!
 cd ..
 
@@ -43,9 +43,9 @@ fi
 echo ""
 echo "============================"
 echo "Application started!"
-echo "Backend:  http://localhost:8002"
+echo "Backend:  http://localhost:8001"
 echo "Frontend: http://localhost:3000"
-echo "API Docs: http://localhost:8002/docs"
+echo "API Docs: http://localhost:8001/docs"
 echo ""
 echo "Press Ctrl+C to stop all servers"
 

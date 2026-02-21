@@ -4,17 +4,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from datetime import timedelta
 from typing import List
-
 from database import get_db, create_db_and_tables, User, Todo
 from schemas import (
-    UserCreate, UserLogin, UserResponse, Token,
+    UserCreate, UserResponse, Token,
     TodoCreate, TodoUpdate, TodoResponse
 )
 from auth import (
     verify_password, get_password_hash,
     create_access_token, decode_access_token,
-    ACCESS_TOKEN_EXPIRE_MINUTES, SECRET_KEY
+    ACCESS_TOKEN_EXPIRE_MINUTES
 )
+
+origins = ["http://localhost:3000"]
 
 # Initialize database
 create_db_and_tables()
@@ -24,7 +25,7 @@ app = FastAPI(title="Todo API", description="A simple todo API with authenticati
 # CORS middleware - configure for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Next.js default port
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -46,7 +47,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
     if payload is None:
         raise credentials_exception
     
-    email: str = payload.get("sub")
+    email: str = payload.get("sub") # type: ignore
     if email is None:
         raise credentials_exception
     
@@ -94,7 +95,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     """Login and get access token."""
     user = db.query(User).filter(User.email == form_data.username).first()
     
-    if not user or not verify_password(form_data.password, user.hashed_password):
+    if not user or not verify_password(form_data.password, user.hashed_password): # type: ignore
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect email or password",
@@ -198,4 +199,4 @@ def delete_todo(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    uvicorn.run(app, host="0.0.0.0", port=8001)

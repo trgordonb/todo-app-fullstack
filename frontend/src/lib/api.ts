@@ -1,4 +1,7 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+// Dynamic API URL based on current window location
+const getApiUrl = () => {
+  return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001';
+};
 
 export interface Todo {
   id: number;
@@ -36,7 +39,7 @@ async function fetchWithAuth(
     (headers as Record<string, string>)['Authorization'] = `Bearer ${token}`;
   }
 
-  const response = await fetch(`${API_URL}${url}`, {
+  const response = await fetch(`${getApiUrl()}${url}`, {
     ...options,
     headers,
   });
@@ -46,7 +49,7 @@ async function fetchWithAuth(
 
 // Auth API
 export async function register(email: string, username: string, password: string): Promise<User> {
-  const response = await fetch(`${API_URL}/api/auth/register`, {
+  const response = await fetch(`${getApiUrl()}/api/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -67,7 +70,7 @@ export async function login(email: string, password: string): Promise<LoginRespo
   formData.append('username', email);
   formData.append('password', password);
 
-  const response = await fetch(`${API_URL}/api/auth/login`, {
+  const response = await fetch(`${getApiUrl()}/api/auth/login`, {
     method: 'POST',
     body: formData,
   });
