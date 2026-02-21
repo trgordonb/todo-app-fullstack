@@ -15,7 +15,7 @@ from auth import (
     ACCESS_TOKEN_EXPIRE_MINUTES
 )
 
-origins = ["http://localhost:3000"]
+origins = ["http://localhost:3002"]
 
 # Initialize database
 create_db_and_tables()
