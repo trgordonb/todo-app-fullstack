@@ -22,7 +22,7 @@ else
 fi
 
 # Start frontend
-echo "Starting frontend server on http://localhost:3002..."
+echo "Starting frontend server on http://localhost:8011..."
 cd frontend
 npm run dev > /tmp/frontend.log 2>&1 
 FRONTEND_PID=$!
@@ -43,9 +43,9 @@ fi
 echo ""
 echo "============================"
 echo "Application started!"
-echo "Backend:  http://localhost:8001"
-echo "Frontend: http://localhost:3002"
-echo "API Docs: http://localhost:8001/docs"
+echo "Backend:  http://localhost:8011"
+echo "Frontend: http://localhost:80122"
+echo "API Docs: http://localhost:8011/docs"
 echo ""
 echo "Press Ctrl+C to stop all servers"
 

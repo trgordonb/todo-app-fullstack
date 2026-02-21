@@ -15,7 +15,7 @@ from auth import (
     ACCESS_TOKEN_EXPIRE_MINUTES
 )
 
-origins = ["http://localhost:3002"]
+origins = ["http://localhost:8011"]
 
 # Initialize database
 create_db_and_tables()
@@ -199,4 +199,4 @@ def delete_todo(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8012)
