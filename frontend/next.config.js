@@ -9,7 +9,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'http://localhost:8011, http://localhost:3001',
+            value: 'http://localhost:8011, http://localhost:3001, http://127.0.0.1:8011, http://127.0.0.1:3001',
           },
           {
             key: 'Access-Control-Allow-Credentials',
@@ -21,7 +21,7 @@ const nextConfig = {
           },
           {
             key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type, Authorization, X-Requested-With',
+            value: 'Authorization, X-Requested-With, X-CSRF-Token, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
           },
         ],
       },
