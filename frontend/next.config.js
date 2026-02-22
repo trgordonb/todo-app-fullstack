@@ -9,7 +9,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'http://localhost:8011, http://localhost:3001, http://127.0.0.1:8011, http://127.0.0.1:3001',
+            value: 'http://localhost:8011/',
           },
           {
             key: 'Access-Control-Allow-Credentials',
@@ -17,7 +17,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' http://localhost:3001;"
+            value: "frame-ancestors 'self' http://localhost:3001/;"
           },
           {
             key: 'Access-Control-Allow-Methods',
