@@ -15,7 +15,7 @@ from auth import (
     ACCESS_TOKEN_EXPIRE_MINUTES
 )
 
-origins = ["http://localhost:8011", "http://localhost:3001"]  # Frontend URLs
+origins = ["http://localhost:8011", "http://localhost:3001", 'http://127.0.0.1:8011', 'http://127.0.0.1:3001']  # Frontend URLs
 
 # Initialize database
 create_db_and_tables()
