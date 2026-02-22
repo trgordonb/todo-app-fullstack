@@ -5,11 +5,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: '/api/:path*',
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'http://localhost:8011', // Adjust this to your frontend URL
+            value: 'http://localhost:8011, http://localhost:3001',
           },
           {
             key: 'Access-Control-Allow-Credentials',

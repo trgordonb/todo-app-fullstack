@@ -1,6 +1,6 @@
 // Dynamic API URL based on current window location
 const getApiUrl = () => {
-  return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001';
+  return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8012';
 };
 
 export interface Todo {
