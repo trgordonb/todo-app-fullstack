@@ -4,7 +4,7 @@ echo "Starting Todo Application..."
 echo "============================"
 
 # Start backend
-echo "Starting backend server on http://localhost:8001..."
+echo "Starting backend server on http://localhost:8012..."
 cd backend
 python main.py > /tmp/backend.log 2>&1 
 BACKEND_PID=$!
@@ -44,7 +44,7 @@ echo ""
 echo "============================"
 echo "Application started!"
 echo "Backend:  http://localhost:8011"
-echo "Frontend: http://localhost:80122"
+echo "Frontend: http://localhost:8012"
 echo "API Docs: http://localhost:8011/docs"
 echo ""
 echo "Press Ctrl+C to stop all servers"

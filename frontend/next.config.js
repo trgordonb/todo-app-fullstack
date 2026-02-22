@@ -16,6 +16,10 @@ const nextConfig = {
             value: 'true',
           },
           {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' http://localhost:3001;"
+          },
+          {
             key: 'Access-Control-Allow-Methods',
             value: 'GET, POST, PUT, DELETE, OPTIONS',
           },
