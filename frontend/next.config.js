@@ -9,7 +9,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'http://localhost:8011/',
+            value: 'http://127.0.0.1:3001/',
           },
           {
             key: 'Access-Control-Allow-Credentials',
@@ -17,7 +17,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' http://localhost:3001/;"
+            value: "frame-ancestors 'self' http://127.0.0.1:3001/;"
           },
           {
             key: 'Access-Control-Allow-Methods',
@@ -25,7 +25,7 @@ const nextConfig = {
           },
           {
             key: 'Access-Control-Allow-Headers',
-            value: 'Authorization, X-Requested-With, X-CSRF-Token, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+            value: 'Authorization, X-Requested-With, X-CSRF-Token, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Frame-Options'
           },
         ],
       },
