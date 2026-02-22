@@ -16,8 +16,6 @@ from auth import (
 )
 
 origins = [
-    "http://localhost:3001",
-    "http://127.0.0.1:3001",
     "http://localhost:8011",
     "http://127.0.0.1:8011",
 ] 
