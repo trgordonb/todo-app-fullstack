@@ -16,8 +16,7 @@ from auth import (
 )
 
 origins = [
-    "http://localhost:8011",
-    "http://137.184.94.9:8011",
+    "http://137.184.94.9:3000",
 ] 
 
 # Initialize database
